@@ -1,7 +1,7 @@
 import os
 
 
-def loadFiles(Home: str, Away: str) -> dict: #Root: str for testy.py
+def loadFiles(Home: str, Away: str, path: str) -> dict: #Root: str for testy.py
     """
     Load data from a SecondSpectrum dataset.
 
@@ -19,7 +19,7 @@ def loadFiles(Home: str, Away: str) -> dict: #Root: str for testy.py
     """
 
     # Define the folder path
-    folder_path = f"C:/Users/jda/Desktop/Hvidovre IF - Silkeborg IF/python/data/{Home}_{Away}" #folder_path = f"C:/Users/jda/Desktop/Hvidovre IF - Silkeborg IF/python/data/{Root}/{Home}_{Away}" for testy.py
+    folder_path = f"{path}/{Home}_{Away}" #folder_path = f"C:/Users/jda/Desktop/Hvidovre IF - Silkeborg IF/python/data/{Root}/{Home}_{Away}" for testy.py
     print(f"Folder path: {folder_path}")
 
 
@@ -47,4 +47,3 @@ def loadFiles(Home: str, Away: str) -> dict: #Root: str for testy.py
                 break  # Stop once we find a match
 
     return matched_files
-

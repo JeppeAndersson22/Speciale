@@ -1,0 +1,34 @@
+import os
+import tqdm
+import pandas as pd
+import numpy as np
+#%load_ext autoreload
+#%autoreload 2
+import socceraction.spadl as spadl
+import socceraction.vaep.features as fs
+import socceraction.xthreat as xthreat
+import matplotsoccer as mps
+from scipy.interpolate import RectBivariateSpline
+import socceraction.spadl.config as spadlconfig
+
+
+
+
+file_path = r"C:\Users\jda\Desktop\Speciale\xtmodelv2.pkl"
+xTModel = xthreat.load_model(file_path)
+action_path = r"C:\Users\jda\Desktop\Speciale\actions.xlsx"
+df = pd.read_excel(action_path)
+#drop where end_x is NaN
+df = df.dropna(subset=['end_x'])
+#only keep where type_name = 'pass' 
+df = df[df["type_name"] == "pass"]
+#100-end x and 100-end y
+#df["end_x"] = 100 - df["end_x"]
+#df["end_y"] = 100 - df["end_y"]
+df["xT_succ"] = xTModel.rate(df)
+
+
+df.to_excel(r"C:\Users\jda\Desktop\Speciale\actions_xt_succ.xlsx", index=False)
+print(xTModel.xT.shape)
+
+

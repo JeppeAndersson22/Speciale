@@ -2,7 +2,7 @@ from socceraction.data.opta import parsers, OptaLoader
 import socceraction.spadl as spadl
 import pandas as pd
 
-def getEventData(matchID: int, f7: str, f24: str, Home: str, Away: str) -> pd.DataFrame:
+def getEventData(matchID: int, f7: str, f24: str, Home: str, Away: str, Path: str) -> pd.DataFrame:
     """
     Get event data from Opta feed files.
     
@@ -20,9 +20,9 @@ def getEventData(matchID: int, f7: str, f24: str, Home: str, Away: str) -> pd.Da
     pd.DataFrame
         The event data.
     """
-    # Load Opta feed files
+    # Load Opta feed files C:/Users/jda/Desktop/Hvidovre IF - Silkeborg IF/python/data/!Processed
     api = OptaLoader(
-        root = f"C:/Users/jda/Desktop/Hvidovre IF - Silkeborg IF/python/data/{Home}_{Away}", #!Processed for testy.py
+        root = f"{Path}/{Home}_{Away}", #!Processed for testy.py
         feeds={
             "f7": f7,
             "f24": f24
@@ -58,4 +58,3 @@ def getEventData(matchID: int, f7: str, f24: str, Home: str, Away: str) -> pd.Da
     df_actions.reset_index(drop=True, inplace=True)
     
     return df_actions
-

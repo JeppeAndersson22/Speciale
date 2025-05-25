@@ -47,7 +47,6 @@ for file in files_in_folder:
 result2 = result2[result2['type_name'].isin(['pass', 'cross'])]
 result2 = ballCoordinates(result2)
 result2["ball_owning_team_id"] = result2["ball_owning_team_id"].astype(int)
-#result2.to_excel('GrundspiltilModel.xlsx', index=False)
 result2.to_csv('GrundspiltilModel.csv', index=False)
 
 
