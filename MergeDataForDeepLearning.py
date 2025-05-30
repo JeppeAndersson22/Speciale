@@ -1,12 +1,11 @@
 import pandas as pd
-import numpy as np
 from Trackingdata import loadTrackingData
 from Eventdata import getEventData
 from loadFiles import loadFiles
-from ConvertToMatrices import ballCoordinates, row_to_matrix, remove_nan_from_matrix
+from ConvertToMatrices import ballCoordinates
 import re
 import os
-
+# This script processes the event data and tracking data for matches, calculates ball coordinates, and saves the results to a CSV file.
 result2 = pd.DataFrame()
 
 

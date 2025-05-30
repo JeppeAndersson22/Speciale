@@ -1,6 +1,5 @@
 import os
 
-
 def loadFiles(Home: str, Away: str, path: str) -> dict: #Root: str for testy.py
     """
     Load data from a SecondSpectrum dataset.

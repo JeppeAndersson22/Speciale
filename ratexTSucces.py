@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 import socceraction.xthreat as xthreat
 
+#This script calculates the xT success for all passes and crosses.
 
 xTModel = xthreat.load_model('xtmodelv2.pkl')
 df = pd.read_csv('alleactionsv2.csv')

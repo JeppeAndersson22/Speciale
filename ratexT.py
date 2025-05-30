@@ -1,15 +1,5 @@
-import os
-import tqdm
 import pandas as pd
-import numpy as np
-#%load_ext autoreload
-#%autoreload 2
-import socceraction.spadl as spadl
-import socceraction.vaep.features as fs
 import socceraction.xthreat as xthreat
-import matplotsoccer as mps
-from scipy.interpolate import RectBivariateSpline
-import socceraction.spadl.config as spadlconfig
 
 file_path = r"C:\Users\jda\Desktop\Speciale\xtmodelv2.pkl"
 xTModel = xthreat.load_model(file_path)

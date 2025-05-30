@@ -2,7 +2,7 @@ from mplsoccer import Pitch, FontManager, Sbopen
 import matplotlib.pyplot as plt
 import pandas as pd
 from kloppy.domain import TrackingDataset
-
+# Plotting functions for visualizing tracking data and events
 
 def plotSyncedFrames(tracking_dataset: TrackingDataset, event_dataset: pd.DataFrame, frame_idx: int, eventID: int) -> None:
     tracking_dataset = tracking_dataset
